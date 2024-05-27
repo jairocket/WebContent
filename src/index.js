@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import axios from 'axios';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,7 +11,6 @@ ReactDOM.render(
 );
 
 //AXIOS //
-const axios = require('axios');
 
 // Fazendo uma requisição GET
 axios.get('https:/jsonplaceholder.typicode.com/posts')
