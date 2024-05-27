@@ -13,7 +13,7 @@ ReactDOM.render(
 const axios = require('axios');
 
 // Fazendo uma requisição GET
-axios.get('https://api.example.com/data')
+axios.get('https:/jsonplaceholder.typicode.com/posts')
   .then(response => {
     console.log(response.data);
   })
