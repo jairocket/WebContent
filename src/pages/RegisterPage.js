@@ -11,33 +11,33 @@ export default function SignUpPage() {
                 <h5>Crie sua conta e anuncie conosco</h5>
             </div>
             
-            <div className='form'>
-                <form action="/home">
+            <form>
+
                 <p>
-                    <label>Nome de usuário</label><br/>
-                    <input type="text" name="first_name" required />
+                    <label>Nome de usuário <input class = "register_input" type="text" name="first_name" required /></label>
+                   
                 </p>
                 <p>
-                    <label>Email</label><br/>
-                    <input type="email" name="email" required />
+                    <label>Email<input class = "register_input" type="email" name="email" required /></label>
+                    
                 </p>
                 <p>
-                    <label>Senha</label><br/>
-                    <input type="password" name="password" requiredc />
+                    <label>Senha<input  class = "register_input" type="password" name="password" requiredc /></label>
+                    
                 </p>
                 <p>
-                    <input type="checkbox" name="checkbox" id="checkbox" required /> <span>Concordo com todos os termos <a href="https://google.com" target="_blank" rel="noopener noreferrer">termos de serviços</a></span>.
+                    <label>CPF<input class = "register_input" type="password" name="password" requiredc /></label>
+                   
                 </p>
+                <p style={{display: "inline-block"}}>
+                    <input type="checkbox" name="checkbox" id="checkbox" required /> <span>Concordo com todos os termos e serviços</span>
+                </p>
+                
                 <p>
                     <button id="sub_btn" type="submit">Registrar-se</button>
-                </p>
+                </p> 
             </form>
             </div>
-            
-            {/* <footer>
-                <p><Link to="/">Back to Homepage</Link>.</p> 
-            </footer>  */}
-        </div>
         
     )
 }

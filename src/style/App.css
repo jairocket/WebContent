@@ -125,20 +125,25 @@ form {
   align-self: center;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px 20px 20px;
-
   background: #f3f3f3;
   border: 1px solid #ddd;
   border-radius: 2px;
   padding: 2rem;
   margin: 2rem 2rem 1rem 2rem;
 }
+p {
+  padding:1rem;
+  justify-content: space-between;
+}
+
+.register_input{
+  margin: 1rem;
+  
+}
 
 form label {
   float: left;
   font-size: .9rem;
-  margin: 0;
-  padding: 0
 }
 
 .right-label {
@@ -165,7 +170,7 @@ input {
 }
 
 #sub_btn:hover {
-  background: #333;
+  background: #272086;
   transition: all .5s
 }
 
