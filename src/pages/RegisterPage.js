@@ -7,7 +7,7 @@ export default function SignUpPage() {
         email: '',
         password: '',
         cpf: '',
-        telephones: [{ number: '', mainNumber: true }] // Supondo que há pelo menos um telefone
+        telephones: [{ number: '', mainNumber: true }] 
     });
 
     const handleChange = (e) => {
@@ -38,16 +38,17 @@ export default function SignUpPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(formData.telephones.mainNumber)
         try {
             const response = await axios.post('http://localhost:8080/costumers/individual', {
                 name: formData.name,
                 email: formData.email,
-                password: formData.password,
+                password: formData.password, 
                 cpf: formData.cpf,
                 telephones: formData.telephones
             });
             console.log('Cliente criado:', response.data);
-            alert('Registro bem-sucedido!'); // Adicionado o alert
+            alert('Registro bem-sucedido!'); 
         } catch (error) {
             console.error('Erro ao criar cliente:', error);
             alert(`Erro ao registrar. Por favor, tente novamente. Erro: ${error.message}`);
@@ -117,7 +118,7 @@ export default function SignUpPage() {
                                 className="register_input"
                                 type="text"
                                 name="number"
-                                value={telephone.number}
+                                value={telephone.number.mainNumber}
                                 onChange={(e) => handleTelephoneChange(index, e)}
                                 required
                             />
