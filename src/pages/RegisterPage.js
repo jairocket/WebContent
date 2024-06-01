@@ -5,7 +5,6 @@ export default function SignUpPage() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        password: '',
         cpf: '',
         telephones: [{ number: '', mainNumber: true }] 
     });
@@ -43,7 +42,6 @@ export default function SignUpPage() {
             const response = await axios.post('http://localhost:8080/costumers/individual', {
                 name: formData.name,
                 email: formData.email,
-                password: formData.password, 
                 cpf: formData.cpf,
                 telephones: formData.telephones
             });
@@ -82,18 +80,6 @@ export default function SignUpPage() {
                             type="email" 
                             name="email" 
                             value={formData.email} 
-                            onChange={handleChange} 
-                            required 
-                        />
-                    </label>
-                </p>
-                <p>
-                    <label>Senha
-                        <input 
-                            className="register_input" 
-                            type="password" 
-                            name="password" 
-                            value={formData.password} 
                             onChange={handleChange} 
                             required 
                         />
