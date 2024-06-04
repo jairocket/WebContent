@@ -8,6 +8,7 @@ import Messages from './pages/Messages';
 import RegisterPage from './pages/RegisterPage';
 import Find from './pages/Find';
 import Support from './pages/Support';
+import { Report } from './pages/Report';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" component={RegisterPage} />
           <Route path="/find" component={Find} />
           <Route path="/support" component={Support} />
+          <Route path="/report" component={Report} />
         </Switch>
       </Router>
     </>

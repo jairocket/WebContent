@@ -185,6 +185,26 @@ footer p {
   
 }
 
+/*** Report ***/
+.reports {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 150px 0px 16px 16px;
+}
+
+.report {
+  display: flex;
+  flex-direction: row;
+  background-color:lightblue;
+  font-size:large;
+  border-radius: 15px;
+  padding: 32px 50px;
+  margin-bottom: 16px;
+  width: 850px;
+}
+
 form span {
   font-size: .8rem;
   display: flex;
