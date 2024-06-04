@@ -10,9 +10,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
-
-
 //AXIOS //
 
 

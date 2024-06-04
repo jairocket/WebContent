@@ -201,3 +201,18 @@ form span {
 .home-page-title {
   color: #222;
 }
+
+
+/* ----- FIND PAGE ----- */
+.col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* ----- CREATE AD----- */
+.form{
+  
+}

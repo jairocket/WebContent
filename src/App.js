@@ -1,6 +1,6 @@
 import React from 'react';
 import './style/App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CriarAd from './pages/CreateAd';
 import MyAds from './pages/MyAds';
