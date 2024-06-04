@@ -7,7 +7,7 @@ import MyAds from './pages/MyAds';
 import Messages from './pages/Messages';
 import RegisterPage from './pages/RegisterPage';
 import Find from './pages/Find';
-import Support from './pages/Support';
+import Ad from './pages/Ad';
 import { Report } from './pages/Report';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path='/messages' component={Messages} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/find" component={Find} />
-          <Route path="/support" component={Support} />
+          <Route path="/Ad" component={Ad} />
           <Route path="/report" component={Report} />
         </Switch>
       </Router>

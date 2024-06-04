@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function CreateAd() {
     const [formData, setFormData] = useState({
@@ -14,8 +15,10 @@ export default function CreateAd() {
         taxes: '',
         fee: '',
         area: '',
-        type: ''  // Ensure this matches the enum in backend
+        type: ''  
     });
+
+    const history = useHistory(); // Hook do React Router para controle de navegação
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,6 +34,7 @@ export default function CreateAd() {
             const response = await axios.post('http://localhost:8080/properties', formData);
             console.log('Propriedade criada:', response.data);
             alert('Registro bem-sucedido!');
+            history.push('/Ad'); // Redireciona para a página desejada
         } catch (error) {
             console.error('Erro ao criar propriedade:', error);
             alert(`Erro ao registrar. Por favor, tente novamente. Erro: ${error.message}`);

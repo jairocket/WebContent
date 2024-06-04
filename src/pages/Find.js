@@ -1,139 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '../components/Card';
-import { SearchBar } from '../components/SearchBar';
-import { SearchResultsList } from '../components/SearchResultsList';
 
 function Find() {
-  const [results, setResults] = useState([]);
+  const [advertisements, setAdvertisements] = useState([]);
+
+  useEffect(() => {
+    fetchAdvertisements();
+  }, []);
+
+  const fetchAdvertisements = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/advertisements');
+      const data = await response.json();
+      setAdvertisements(data);
+    } catch (error) {
+      console.error('Erro ao buscar anúncios:', error);
+    }
+  };
 
   return (
-  <div className="App">
-
-    <div className="search-bar-container">
-        <SearchBar setResults={setResults} />
-        {results && results.length > 0 && <SearchResultsList results={results} />}
-    
-    
+    <div className="App">
+      <div className="col">
+        {advertisements.map(advertisement => (
+          <Card
+            key={advertisement.id}
+            imgSrc="https://picsum.photos/id/193/300/200"
+            imgAlt={`Imagem do anúncio ${advertisement.id}`}
+            title={`Casa ${advertisement.id}`}
+            description={advertisement.description}
+            buttonText="Learn More"
+            link={`advertisement/${advertisement.id}`} // Rota para detalhes do anúncio, se necessário
+            price={`Valor: R$ ${advertisement.value}`}
+          />
+        ))}
+      </div>
     </div>
-
-    <div className="col">
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-        />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-    </div>
-    <div className="col">
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-        />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-    </div>
-    <div className="col">
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-        />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-    </div>
-    <div className="col">
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-        />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-      <Card
-        imgSrc="https://picsum.photos/id/193/300/200"
-        imgAlt="Card Image 3"
-        title="Card Title"
-        description="This is the card description section. You can add more details about the product here"
-        buttonText="Learn More"
-        link="card2"
-        price="100.000"
-      />
-    </div>
-    
-  </div>
   );
 }
 
